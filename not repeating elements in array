@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace do_not_repeat_element_in_array
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] MyArra = new int[10];
+            int Element;
+            //input
+            Console.WriteLine("Enter the Elements of aray");
+            for(int i=0;i<10;i++)
+            {
+                Input: Element = Convert.ToInt32(Console.ReadLine());
+                for(int j=0;j<10;j++)
+                {
+                    if (Element == MyArra[j])
+                    {
+                        Console.WriteLine("Element already exist...try again");
+                        goto Input;
+                    }
+                }
+                MyArra[i] = Element;
+            }
+            //output
+            Console.WriteLine("Entered Elements are....");
+            for(int i=0;i<10;i++)
+            {
+                Console.WriteLine("Elements are:" + MyArra[i]);
+            }
+            Console.ReadLine();
+        }
+    }
+}
